@@ -1,8 +1,7 @@
 # Retail-Sales-Analysis-Using-MS-SQL-Server
-Analyzed retail sales data using MS SQL Server to uncover trends, optimize performance, and provide actionable business insights.
+Analyzed retail sales data using **MS SQL Server** to uncover trends, optimize performance, and provide actionable business insights.
 
 ![image](https://github.com/user-attachments/assets/f3b88e18-c3dd-4006-bf72-665d2f94e45f)
-
 
 ## About The Project:
 In this retail sales analysis project, we're basically exploring sales data, checking out what customers are up to, and seeing how fast stuff flies off the shelves.
@@ -20,52 +19,43 @@ This data enables analysis of sales performance, profitability, and customer beh
 
 ![image](https://github.com/user-attachments/assets/598c106a-b7e4-4b34-9b9d-6f8bbae9e64e)
 
-## This project comprises of 5 tasks:
-While doing this project, I make 
-### Task 1: Data preparation and customer analytics
-We analyze the store’s transaction dataset and identify customer purchasing behaviors to generate insights and provide commercial recommendations.
+## This project comprises of 4 tasks:
+The tasks are designed to progressively analyze and derive actionable insights from the sales data, using SQL queries.
 
-There are two important datasets in this task, chips sales and customer data. The task is to carry out exploratory data analysis in order to extract insights about the purchasing behavior of different customer groups. We want to then use those insights to formulate strategies to help the store increase chip sales.
+### Task 1: Data Exploration and Querying
+The project begins by analyzing the two available datasets, namely the **orders_data table** and the **returns_data table**. 
 
-Below is the outline of our main tasks along with what we should be looking for in the data for each.
+The focus is to perform fundamental queries on the orders_data table to extract meaningful insights and verify the integrity of the data. The tasks include retrieving all the data from the orders_data table, extracting specific columns such as order_id, order_date, and sales, and limiting the results to the first 10 records. Sorting operations are performed to organize the data in both ascending and descending order based on the order_date column. For cases with ties in the order_date, additional sorting by the profit column in descending order is implemented. The analysis also identifies the top 5 order_id entries with the highest sales amounts. Furthermore, a new calculated column, ratio (defined as profit/sales), is created, and the data is ordered by the ascending values of this new column. 
 
-Examine transaction data – look for inconsistencies, missing data across the data set, outliers, correctly identified category items, numeric data across all tables. If we determine any anomalies we make the necessary changes in the dataset and save it. Having clean data will help when it comes to the analysis. Examine customer data – check for similar issues in the customer data, look for nulls and when we are happy we merge the transaction and customer data together so it’s ready for the analysis.
+These queries ensure an in-depth understanding of the data structure and patterns within the orders_data table, setting a solid foundation for further analysis.
 
-Data analysis and customer segments – in the analysis we make sure we define the metrics – look at total sales, drivers of sales, where the highest sales are coming from etc. Explore the data, create charts and graphs as well as noting any interesting trends and/or insights you find. These will all form part of the report.
+### Task 2: Data Filtering and Conditional Queries
+We extend our analysis from Task 1 to help us identify different conditions that impact on customer sales.
 
-Deep dive into customer segments – define recommendation from the insights, determine which segments should be targeted, if packet sizes are relative and form an overall conclusion based on the analysis.
+Task 2 focuses on filtering data from the **orders_data** table based on various conditions to extract precise subsets of information. The filters include region-specific queries, category and quantity-based conditions, and date-based filtering to analyze specific timeframes. Additionally, customer name patterns and order ID duplication are explored. Advanced filters combine multiple conditions, such as quantity thresholds, regional preferences, and category overlaps, ensuring sorted outputs based on quantity, profit, or dates. These queries refine the dataset for targeted analysis and provide insights tailored to specific business requirements.
 
-### Task 2: Experimentation and uplift testing
-We extend our analysis from Task 1 to help us identify benchmark stores that allow us to test the trial store layouts' impact on customer sales.
+### Task 3: Advanced Data Analysis
+Task 3 delves into comprehensive data analysis using SQL queries to extract, transform, and summarize key insights from the **orders_data** and **returns_data** tables. 
 
-For this part of the project we will be examining the performance in trial vs control stores to provide a recommendation for each location based on our insight. There are 3 trial stores that have gone through a 3-month trial period with modified store layouts.
+This includes identifying unique values, **aggregating metrics** like total sales, profit, and variance, and using string and date functions for detailed exploration. The task also incorporates filtering, grouping, and joining operations to analyze sales lost due to returns, categorize profitability, and understand patterns based on time periods (years, months, and quarters). Window functions are employed to identify top customers and products by region. 
 
-Below are some of the areas we focus on:
+These analytical queries provide a nuanced understanding of the dataset, aiding in actionable decision-making.
 
-Select control stores – explore the data and define metrics for the control store selection – think about what would make them a control store. Look at the drivers and make sure we visualise these in a graph to better determine if they are suited. For this piece it may even be worth creating a function to help it.
+### Task 4: Advanced Sales Analysis and Metrics
+In this task, I focuse on advanced sales analysis to uncover key trends and insights across regions. The task includes calculating cumulative sales for each customer over time, measuring year-over-year sales growth for each category, and identifying the top three most profitable customers in each region along with their contribution to total regional profit. 
 
-Assessment of the trial – this one should give us some interesting insights into each of the stores, check each trial store individually in comparison with the control store to get a clear view of its overall performance. We want to know if the trial stores were successful or not.
-
-Collate findings – summarise the findings for each store and provide an recommendation that we can share with the store, outlining the impact on sales during the trial period.
-
-### Task 3: Analytics and commercial application
-Use analytics and insights from Task 1 and 2 to prepare a report for the client(the retail store).(This document is not included in this repo.)
+Additionally, the running average of daily sales is calculated for each region, along with determining the overall average sales across regions. These analyses help in understanding regional performance and customer profitability, providing a deeper insight into sales dynamics.
 
 ## Key Findings:
 After thoroughly examining our data, we have come to several various conclusions:
 
-There has been a great significant increase in sales in the company over years despite some shortcomings.
-New York & Los Angeles City made the most order for all product categories.
-The technology category is the most dominant category in the 7 markets that we have.
-Sales & Profit takes a dip during July across all years and the company makes the most sales between November and December.
-The customer segment makes the most profit.
-The shipping cost affects sales as we can see that they are strongly correlated.
-From the business angle, based on our findings we would recommend the following to stakeholders of the company:
-
-The company should stop selling products that the profit is negative as that is a loss to the company.
-Reduce discounts in cities where we have high discounts but low profits.
-For the company to increase customer satisfaction, the relationship between shipment interval and cost needs to be improved. There also needs to be a yardstick for proximity, distance, quick delivery, and longer delivery times.
-In regions and countries with low sales, the company should increase product marketing and advertising.
+1. **Sales Trends:** Identified top-performing regions, categories, and growth patterns over time.
+2. **Profitability:** Recognized the most profitable customers and their contribution to regional profit.
+3. **Sales Losses:** Analyzed sales lost due to returns, highlighting areas for product or service improvements.
+4. **Customer Behavior:** Identified patterns in customer names and segmented key customers for targeted strategies.
+5. **Product Insights:** Found top-selling and most profitable products within each region.
+6. **Temporal Trends:** Analyzed sales by month, quarter, and year, with averages to forecast and manage performance.
+7. **Operational Efficiency:** Identified average shipping days, revealing potential operational improvements.
 
 ## Summary:
-The purpose of this article was to outline the procedures I used to analyze a retail dataset. To begin, I performed some tasks like removing missing values from datasets, creating new columns, and changing the data type of columns (to_datetime). Then the article moves to the Exploration data Analysis where we explore questions at the business level related to our data.
+This project analyzes sales data across four key tasks using MS SQL Server. **Task 1** focuses on extracting and sorting data from the **orders_data** table. **Task 2** filters and aggregates sales information based on regions, categories, and other criteria. **Task 3** integrates **returns_data** table to evaluate the financial impact of returns on sales and profitability. **Task 4** analyzes customer and regional performance, calculating cumulative sales, identifying top customers, and measuring year-over-year growth. Key insights include identifying sales trends, top-performing regions and products, customer behavior, and areas for operational improvement, supporting better decision-making and strategic planning.
